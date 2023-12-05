@@ -20,7 +20,7 @@ This repository contains an autonomous car simulation project using Python, Pyga
 - `car.py`: Contains the definition of the `Car` class and logic to load the neural network.
 - `main.py`: Main script to run the simulation.
 - `config-feedforward.txt`: NEAT configuration used to train the neural network.
-- `winner.pkl`: Stores the weights of the winning neural network (you need to generate this file).
+- `winner.pkl`: Stores the weights of the winning neural network (you need to generate this file with this [Colab](https://github.com/julianVelandia/Algoritmos-evolutivos-paralelizables-con-CUDA-Notebook) ).
 - `track.png`: Track image for the simulation.
 - `car.png`: Image of the car used in the simulation.
 
