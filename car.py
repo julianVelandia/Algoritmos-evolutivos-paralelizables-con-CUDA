@@ -11,15 +11,18 @@ RADAR_COLOR = (0, 0, 255)
 WHITE_COLOR = (255, 255, 255, 255)
 
 def load_neural_network(path):
-    with open(path, 'rb') as f:
-        winner = pickle.load(f)
+    try:
+        with open(path, 'rb') as f:
+            winner = pickle.load(f)
 
-    local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config-feedforward.txt')
-    config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
-                                neat.DefaultSpeciesSet, neat.DefaultStagnation,
-                                config_path)
-    return neat.nn.FeedForwardNetwork.create(winner, config)
+        local_dir = os.path.dirname(__file__)
+        config_path = os.path.join(local_dir, 'config-feedforward.txt')
+        config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
+                                    neat.DefaultSpeciesSet, neat.DefaultStagnation,
+                                    config_path)
+        return neat.nn.FeedForwardNetwork.create(winner, config)
+    except:
+        pass
 
 
 class Car(object):

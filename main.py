@@ -1,6 +1,6 @@
 import sys
 import pygame
-from car import Car
+from car import Car, load_neural_network
 import neat
 
 SCREEN_HEIGHT = 1500
@@ -134,6 +134,7 @@ def run_car(genomes, config):
 
 
 if __name__ == "__main__":
+    load_neural_network('winner.pkl')
     config_path = "./config-feedforward.txt"
     config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
